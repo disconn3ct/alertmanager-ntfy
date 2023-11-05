@@ -166,6 +166,16 @@ func (s *Server) forwardAlert(logger *zap.Logger, alert *alertmanager.Alert) err
 	}
 	tags = append(tags, convertLabelsToTags(alert.Labels)...)
 
+	var actions []string
+	for _, action := range s.cfg.Ntfy.Notification.Actions {
+		if action.Valid() {
+			actions = append(actions, fmt.Sprintf("%s, %s, %s, clear=true", action.Action, action.Label, action.Url))
+		}
+	}
+	if len(actions) > 0 {
+		req.Header.Set("X-Actions", strings.Join(actions, ";"))
+	}
+
 	if title != "" {
 		req.Header.Set("X-Title", title)
 	}

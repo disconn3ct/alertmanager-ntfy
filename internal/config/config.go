@@ -32,6 +32,12 @@ type Tag struct {
 	Condition *Expression `yaml:"condition"`
 }
 
+type Action struct {
+	Action       string      `yaml:"action"`
+	Label        string      `yaml:"label"`
+	Url          string      `yaml:"url"`
+}
+
 type BasicAuth struct {
 	Username string `yaml:"username"`
 	Password string `yaml:"password"`
@@ -47,6 +53,7 @@ type Notification struct {
 	Priority  *StringExpression `yaml:"priority"`
 	Tags      []*Tag            `yaml:"tags"`
 	Templates *Templates        `yaml:"templates"`
+	Actions   []*Action         `yaml:"actions"`
 }
 
 type Ntfy struct {
@@ -118,6 +125,11 @@ func (e *StringExpression) UnmarshalText(text []byte) error {
 // valid. Returns false if it is nil, or if the username or password is empty.
 func (a *BasicAuth) Valid() bool {
 	return a != nil && a.Username != "" && a.Password != ""
+}
+
+// Currently only view action is implemented.
+func (a *Action) Valid() bool {
+	return a != nil && a.Action == "view" && a.Label != "" && a.Url != ""
 }
 
 func isAlphaNumeric(s string) bool {
