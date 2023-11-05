@@ -139,6 +139,8 @@ func (s *Server) forwardAlert(logger *zap.Logger, alert *alertmanager.Alert) err
 
 	if s.cfg.Ntfy.Auth.Valid() {
 		req.SetBasicAuth(s.cfg.Ntfy.Auth.Username, s.cfg.Ntfy.Auth.Password)
+	} else if s.cfg.Ntfy.Token != "" {
+		req.Header.Set("Authorization", "Bearer " + s.cfg.Ntfy.Token)
 	}
 
 	var tags []string

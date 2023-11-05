@@ -1,4 +1,6 @@
-# alertmanager-ntfy [![build](https://github.com/alexbakker/alertmanager-ntfy/actions/workflows/build.yml/badge.svg)](https://github.com/alexbakker/alertmanager-ntfy/actions/workflows/build.yml)
+# alertmanager-ntfy
+
+This is a fork of @alexbakker [plugin][o].
 
 __alertmanager-ntfy__ is a service that forwards [Prometheus
 Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/)
@@ -158,3 +160,4 @@ To replicate the configuration example above:
   };
 }
 ```
+[o]: https://github.com/alexbakker/alertmanager-ntfy

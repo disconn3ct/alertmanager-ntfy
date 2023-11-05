@@ -53,6 +53,7 @@ type Ntfy struct {
 	BaseURL      string        `yaml:"baseurl"`
 	Timeout      time.Duration `yaml:"timeout"`
 	Auth         *BasicAuth    `yaml:"auth"`
+	Token        string        `yaml:"token"`
 	Notification Notification  `yaml:"notification"`
 }
 
