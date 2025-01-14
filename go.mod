@@ -3,7 +3,7 @@ module github.com/alexbakker/alertmanager-ntfy
 go 1.19
 
 require (
-	github.com/PaesslerAG/gval v1.2.1
+	github.com/PaesslerAG/gval v1.2.4
 	github.com/fatih/structs v1.1.0
 	github.com/gin-contrib/zap v0.1.0
 	github.com/gin-gonic/gin v1.8.1
