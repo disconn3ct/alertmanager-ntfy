@@ -6,7 +6,7 @@ RUN git clone https://github.com/b3niup/alertmanager-ntfy.git .
 RUN go mod download
 RUN GOOS=linux go build -o /alertmanager-ntfy ./cmd/alertmanager-ntfy
 
-VOLUME /etc/alertmanager-ntfy
+VOLUME /config
 EXPOSE 8000
 ENTRYPOINT ["/alertmanager-ntfy"]
-CMD ["--configs", "/etc/alertmanager-ntfy/alertmanager-ntfy.yml"]
+CMD ["--configs", "/config/config.yaml"]
