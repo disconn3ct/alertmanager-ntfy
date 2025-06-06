@@ -5,12 +5,12 @@ go 1.19
 require (
 	github.com/PaesslerAG/gval v1.2.4
 	github.com/fatih/structs v1.1.0
-	github.com/gin-contrib/zap v0.1.0
+	github.com/gin-contrib/zap v0.2.0
 	github.com/gin-gonic/gin v1.10.1
 	github.com/knadh/koanf v1.5.0
 	github.com/mitchellh/copystructure v1.2.0
 	github.com/spf13/pflag v1.0.6
-	go.uber.org/zap v1.24.0
+	go.uber.org/zap v1.25.0
 )
 
 require (
@@ -40,7 +40,7 @@ require (
 	go.opentelemetry.io/otel v1.11.2 // indirect
 	go.opentelemetry.io/otel/trace v1.11.2 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	go.uber.org/multierr v1.8.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
