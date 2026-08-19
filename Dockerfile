@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM golang:1.24
+FROM golang:1.27
 WORKDIR /build
 RUN git clone https://github.com/b3niup/alertmanager-ntfy.git .
 RUN go mod download
